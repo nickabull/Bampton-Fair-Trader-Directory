@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brook Street Mapping Demo | Bampton Charter Fair</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#291d16;background:#faf6ef}*{box-sizing:border-box}body{margin:0}
+header{background:linear-gradient(110deg,#25180f,#5b3119);border-bottom:6px solid #ed9b36;color:white;padding:25px max(22px,calc((100vw - 1100px)/2))}
+.kicker{color:#ffbc64;letter-spacing:.16em;font-size:12px;font-weight:900}h1{font-size:clamp(26px,4vw,44px);margin:7px 0}header p{margin:0;color:#fce3c1}
+main{max-width:1100px;margin:auto;padding:22px}.notice{background:#fff0d3;border-left:5px solid #c87815;padding:13px 16px;border-radius:5px;margin-bottom:18px}
+.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:18px}.panel{background:white;border:1px solid #e5d8c6;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px #3e241008}
+.panel h2{font-size:21px;margin:0;padding:18px 20px 10px}.sub{color:#67574d;font-size:14px;padding:0 20px 15px;margin:0}.map{position:relative;aspect-ratio:3/2;min-height:350px;background:#e9e6d7;overflow:hidden}
+.map svg{width:100%;height:100%;display:block}.pin{position:absolute;transform:translate(-50%,-50%);background:#f5a73b;border:3px solid #fff;border-radius:50%;width:48px;height:48px;cursor:pointer;color:#251a12;font-weight:900;font-size:17px;box-shadow:0 3px 8px #25180f77}
+.pin[aria-pressed=true]{background:#302015;color:#fff;outline:4px solid #f5a73b;z-index:2}
+.key{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:12px 18px;font-size:13px;color:#604f43}.swatch{width:16px;height:16px;background:#f5a73b;border-radius:50%;display:inline-block;vertical-align:middle}
+.details{padding:0 20px 20px}.tag{display:inline-block;background:#fff0d3;color:#5c330b;border-radius:5px;padding:5px 9px;font-size:12px;font-weight:900}h3{font-size:26px;margin:15px 0 8px}.details p{line-height:1.5}.muted{color:#6b6057}.browse{display:grid;gap:7px;margin-top:20px}.browse button{font:inherit;cursor:pointer;padding:12px;text-align:left;background:#fbf7f0;border:1px solid #e5d8c6;border-radius:7px;color:#302015}.browse button[aria-pressed=true]{background:#332219;color:white;border-color:#332219}.browse small{display:block;opacity:.75;margin-top:3px}.nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:15px}.nav a{color:#452919;font-weight:700;text-decoration:none}
+@media(max-width:720px){.layout{grid-template-columns:1fr}.map{min-height:300px}.pin{width:42px;height:42px}main{padding:15px}header{padding:24px 18px}}
+</style></head><body>
+<header><div class="kicker">BAMPTON CHARTER FAIR · INTERACTIVE MAP TEST</div><h1>Brook Street — mapping playground</h1><p>Tap a numbered pitch to see how a visitor might find a stall.</p></header>
+<main><div class="nav"><a href="./">← Back to stallholder directory</a></div>
+<div class="notice"><strong>DEMO ONLY — FICTIONAL STALLS &amp; ILLUSTRATIVE MAP.</strong> These stall names, numbers and positions are invented to test the interaction. The drawing is not a survey or navigational map. Nothing here identifies an actual 2026 or 2027 stallholder.</div>
+<div class="layout"><section class="panel"><h2>Brook Street · first section</h2><p class="sub">Concept drawing, not to scale. Select any amber numbered marker.</p>
+<div class="map" aria-label="Schematic stretch of Brook Street with six fictional pitch markers">
+<svg viewBox="0 0 720 480" role="img" aria-label="Illustrative block plan with Brook Street running horizontally through the centre, pitches on both sides">
+<defs><pattern id="p" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#d9d7c7" stroke-width="1"/></pattern></defs>
+<rect width="720" height="480" fill="#eceadc"/><rect width="720" height="480" fill="url(#p)"/>
+<g fill="#d2bca0" stroke="#a78d70" stroke-width="2"><rect x="45" y="35" width="178" height="128" rx="6"/><rect x="250" y="35" width="185" height="128" rx="6"/><rect x="466" y="35" width="205" height="128" rx="6"/><rect x="45" y="315" width="178" height="128" rx="6"/><rect x="250" y="315" width="185" height="128" rx="6"/><rect x="466" y="315" width="205" height="128" rx="6"/></g>
+<rect x="0" y="178" width="720" height="122" fill="#a7a6a0"/><path d="M0 239H720" stroke="#fff5d5" stroke-width="3" stroke-dasharray="20 20"/><path d="M0 177H720M0 301H720" stroke="#eee8de" stroke-width="7"/>
+<g font-family="system-ui,sans-serif" font-weight="800" fill="#51463b"><text x="360" y="220" text-anchor="middle" font-size="30">BROOK STREET</text><text x="360" y="264" text-anchor="middle" font-size="15">ILLUSTRATIVE • NOT TO SCALE</text></g>
+<g fill="#715c43" font-family="system-ui,sans-serif" font-size="13" text-anchor="middle"><text x="135" y="85">Fictional frontage</text><text x="340" y="85">Fictional frontage</text><text x="565" y="85">Fictional frontage</text><text x="135" y="403">Fictional frontage</text><text x="340" y="403">Fictional frontage</text><text x="565" y="403">Fictional frontage</text></g>
+</svg>
+<button class="pin" style="left:19%;top:32%" data-id="D01" aria-label="Fictional pitch D01">1</button>
+<button class="pin" style="left:47%;top:32%" data-id="D02" aria-label="Fictional pitch D02">2</button>
+<button class="pin" style="left:78%;top:32%" data-id="D03" aria-label="Fictional pitch D03">3</button>
+<button class="pin" style="left:19%;top:68%" data-id="D04" aria-label="Fictional pitch D04">4</button>
+<button class="pin" style="left:47%;top:68%" data-id="D05" aria-label="Fictional pitch D05">5</button>
+<button class="pin" style="left:78%;top:68%" data-id="D06" aria-label="Fictional pitch D06">6</button></div>
+<div class="key"><span><span class="swatch"></span> Clickable dummy pitch</span><span>Brown = selected pitch</span></div></section>
+<aside class="panel"><h2>Selected stall</h2><p class="sub">This would eventually open from a real directory listing.</p><div class="details" aria-live="polite">
+<span class="tag" id="pitch">DUMMY PITCH D01</span><h3 id="stall">Example Bakery</h3><p id="goods">Bread and cakes (fictional)</p><p class="muted" id="location">Brook Street · example north-side position</p>
+<p><strong>Visitor instruction:</strong> <span id="help">Look for the numbered marker on the illustration.</span></p><h3 style="font-size:17px;margin-top:25px">Try another pitch</h3><div class="browse" id="browse"></div></div></aside></div>
+<p class="muted" style="margin-top:20px;font-size:13px">Before using this for visitors, we need the approved Brook Street map image, confirmed pitch positions and the stallholder master data. We can then replace this schematic without changing the basic click-to-find concept.</p></main>
+<script>
+const stalls=[{id:"D01",name:"Example Bakery",goods:"Bread and cakes",side:"north",help:"Select the marker beside the first illustrated frontage."},{id:"D02",name:"Sample Candle Co.",goods:"Handmade candles",side:"north",help:"Select the middle marker on the north side."},{id:"D03",name:"Demo Pottery",goods:"Ceramics",side:"north",help:"Select the rightmost north-side marker."},{id:"D04",name:"Imaginary Flowers",goods:"Cut flowers",side:"south",help:"Select the first marker on the south side."},{id:"D05",name:"Test Toy Stall",goods:"Handmade toys",side:"south",help:"Select the middle south-side marker."},{id:"D06",name:"Pretend Preserves",goods:"Jams and chutneys",side:"south",help:"Select the rightmost south-side marker."}];
+const browse=document.getElementById("browse");let selected="D01";
+function select(id){const d=stalls.find(s=>s.id===id);if(!d)return;selected=id;
+document.getElementById("pitch").textContent="DUMMY PITCH "+d.id;document.getElementById("stall").textContent=d.name;
+document.getElementById("goods").textContent=d.goods+" (fictional)";document.getElementById("location").textContent="Brook Street · example "+d.side+"-side position";
+document.getElementById("help").textContent=d.help;
+document.querySelectorAll("[data-id]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===id)));}
+stalls.forEach((d,i)=>{const b=document.createElement("button");b.dataset.id=d.id;b.innerHTML="<strong>"+(i+1)+". "+d.name+"</strong><small>"+d.goods+" · dummy "+d.id+"</small>";b.addEventListener("click",()=>select(d.id));browse.appendChild(b);});
+document.querySelectorAll(".pin").forEach(b=>b.addEventListener("click",()=>select(b.dataset.id)));select(selected);
+</script></body></html>
